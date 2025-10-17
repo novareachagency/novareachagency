@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Nova Reach agency | Web Designer & Developer</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+   
+  <style>
+  
+    
+    /* Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #000000;
+      scroll-behavior: smooth;
+    }
+    body {
+   padding: 15px;
+    background-color: white;
+     color: black;
+     font-size: 16px;
+    
+    }
+
+
+
+    section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /*navigtion Header*/
+    /* Theme Variables */
+        :root {
+            /* Light Theme */
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --nav-bg: #f8f9fa;
+            --nav-border: #e0e0e0;
+            --toggle-bg: #e9ecef;
+            --toggle-icon: #495057;
+            --link-hover: #0d6efd;
+            
+            /* Dark Theme (will override when active) */
+            --dark-bg-color: #121212;
+            --dark-text-color: #e0e0e0;
+            --dark-nav-bg: #1e1e1e;
+            --dark-nav-border: #333333;
+            --dark-toggle-bg: #2d2d2d;
+            --dark-toggle-icon: #adb5bd;
+            --dark-link-hover: #6c757d;
+        }
+
+        /* Apply dark theme when class is present */
+        .dark-theme {
+            --bg-color: var(--dark-bg-color);
+            --text-color: var(--dark-text-color);
+            --nav-bg: var(--dark-nav-bg);
+            --nav-border: var(--dark-nav-border);
+            --toggle-bg: var(--dark-toggle-bg);
+            --toggle-icon: var(--dark-toggle-icon);
+            --link-hover: var(--dark-link-hover);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            padding-top: 70px;
+        }
+
+        /* Navigation Styles */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--nav-bg);
+            border-bottom: 1px solid var(--nav-border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-hover);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--link-hover);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--toggle-bg);
+            border: none;
+            width: 50px;
+            height: 30px;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0 3px;
+        }
+
+        .toggle-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--toggle-icon);
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle.dark .toggle-icon {
+            transform: translateX(20px);
+        }
+
+        /* Sun Icon (for light mode) */
+        .sun-icon {
+            display: block;
+        }
+
+        /* Moon Icon (for dark mode) */
+        .moon-icon {
+            display: none;
+        }
+
+        .theme-toggle.dark .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle.dark .moon-icon {
+            display: block;
+        }
+
+        /* Content Styling */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+    /* Hero Section */
+    #hero {
+       background-color: #1e293b;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center 100%;
+      background: linear-gradient(135deg, #000000 0%, #e4edf9 100%);
+      padding-top: 40px; /* Compensate for fixed nav */
+      font-size: 1rem;
+         opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease forwards;
+              }
+          @keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    }
+
+/* Optional: Responsive sizing */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}
+    
+
+    .hero-content h1 { 
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .hero-content p {
+      text-align: center;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .cta-button {
+      text-align: center;
+      display: inline-block;
+      padding: 12px ;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background: #0eee98;
+    }
+
+    /* about Sections */
+    #about, #services, #portfolio, #testimonials, #contact {
+      background: #fff;
+    }
+
+    #about {
+      border: rgb(0, 136, 136) 5px solid;
+      background-color: #000000;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text {
+      text-align: center;
+      color: white;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #f5fff5;
+    }
+
+    /* Services */
+    /* Theme-aware variables */
+  :root {
+    --bg: #ffffff;
+    --text: #1e293b;
+    --card-bg: #f8fafc;
+    --border: #e2e8f0;
+    --icon-bg: #eff6ff;
+    --icon-color: #23563eb;
+  }
+.dark-theme {
+    --bg: #000000;
+    --text: #f1f5f9;
+    --card-bg: #1e293b;
+    --border: #334155;
+    --icon-bg: #334155;
+    --icon-color: #60a5fa;
+  }
+   .services-section {
+    padding: 80px 20px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+
+  .services-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+
+    padding: 35px 25px;
+    background: #f8fafc;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .service-icon {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #475569;
+  }
+    
+    /* Dark Theme Support */
+
+
+  .services-section {
+    background: var(--bg);
+    color: var(--text);
+    padding: 80px 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .services-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repe
+at(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  #services {
+    background: #000000;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+  }
+
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--icon-bg);
+    color: var(--icon-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+
+  .service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+
+    color: var(--text);
+    opacity: 0.9;
+  }
+    
+    /* Package Section */
+    .h3{
+       color: aquamarine;
+      font-weight: 1000;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+
+    }
+    .packages-section {
+    padding: 60px 20px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  .packages-grid {
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .package-card {
+
+    width: 100%;
+    max-width: 360px;
+    border: 3px solid #10b981; /* Green border */
+    border-radius: 16px;
+    padding: 30px;
+    background: #0f0000;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25);
+  }
+
+  .package-card h3 {
+    text-align: center;
+    font-size: 1.7rem;
+
+    margin-bottom: 22px;
+    color: #065f46; /* Dark green */
+    font-weight: 700;
+  }
+
+  .package-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .package-card li {
+    padding: 9px 0;
+    font-size: 1rem;
+    color: #334155;
+    border-bottom: 1px dashed #e2e8f0;
+  }
+
+  .package-card li:last-child {
+    border-bottom: none;
+  }
+
+
+  .price {
+    font-size: 1.25rem;
+    color: #059669; /* Strong green */
+    font-weight: bold;
+    padding-top: 12px;
+    text-align: center;
+  }
+
+  /* Dark Theme Support (optional) */
+  @media (prefers-color-scheme: dark) {
+    .packages-section {
+      background: #000000;
+      color: #f1f5f9;
+    }
+    .h2{
+      color: aquamarine;
+      font-weight: 1000;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+
+    }
+    .package-card {
+      background: #1e293b;
+      border-color: #059669;
+      color: #f1f5f9;
+    }
+    .package-card h3 {
+
+      color: #60a5fa;
+    }
+    .package-card li {
+      color: #cbd5e1;
+      border-bottom-color: #334155;
+    }
+    .price {
+      color: #34d399;
+    }
+  }
+   
+    
+    /* Contact */
+    section#contact {
+    background: #000000;
+  }
+  .h21{
+     color: aquamarine;
+      font-weight: 1000;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+
+    
+  }
+    /* Footer */
+    .site-footer {
+    background: #0f172a; /* Dark background */
+    color: #f1f5f9;
+    padding: 40px 20px 20px ;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+  }
+
+  .footer-logo strong {
+    font-size: 1.4rem;
+    color: white;
+  }
+
+
+  .footer-links a,
+  .footer-social a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover,
+  .footer-social a:hover {
+    color: #60a5fa; /* Light blue on hover */
+  }
+
+
+  .footer-social a:hover {
+    font-size: 1.2rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+  .form-box {
+           
+            padding: 5.5rem;
+            text-align: center;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+        }s
+
+  /* Optional: Light mode version */
+  .light-theme .site-footer {
+    background: #f8fafc;
+    color: #1e293b;
+  }
+
+
+  .light-theme .footer-links a,
+  .light-theme .footer-social a {
+    color: #475569;
+  }
+
+  .light-theme .footer-links a:hover,
+  .light-theme .footer-social a:hover {
+    color: #2563eb; /* Your brand blue */
+  }
+
+  .light-theme .footer-bottom {
+    border-top-color: #e2e8f0;
+    color: #64748b;
+  }
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin: 0 10px;
+      }
+
+      #hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <!-- 🧭 Navigation Bar (Sticky) -->
+   
+    <nav>
+        <div class="nav-links">
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#packages">Packages</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="toggle-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-9a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m0 16a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7z"/>
+            </svg>
+            <svg class="toggle-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m0 16a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7z"/>
+            </svg>
+        </button>
+    </nav>
+
+    <div class="content">
+
+    </div>
+
+    
+  <!-- 🧭 1. Hero / Intro Section -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Nova Reach Agency</h1>
+      <p>Building modern websites that grow your brand</p>
+      <a href="#services" class="cta-button">View our services </a></div>
+    </div>
+  </section>
+  <br>
+  <br>
+   <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="toggle-icon sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-9a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m0 16a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7z"/>
+            </svg>
+            <svg class="toggle-icon moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 9 9 9 9 0 0 0 9-9 9 9 0 0 0-9-9m0 16a7 7 0 0 1-7-7 7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7z"/>
+            </svg>
+        </button>
+    </nav>
+
+    <div class="content">
+      
+
+    <script>
+        // Theme toggle functionality
+        const toggleButton = document.querySelector('.theme-toggle');
+        const body = document.body;
+
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Apply theme on page load
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            body.classList.add('dark-theme');
+            toggleButton.classList.add('dark');
+        }
+
+        // Toggle theme on button click
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            toggleButton.classList.toggle('dark');
+            
+            // Save preference to localStorage
+            const isDark = body.classList.contains('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    </script>
+ 
+
+  <!-- 👤 2. About Section -->
+    
+  <section id="about">
+    <div class="about-text">
+      <h2> About  <span style= "color:rgb(2, 85, 43); font-weight: 1000;" >us</span></h2>
+      <p>“We’re a creative agency focused on web design, branding, and digital growth. Our mission is to help brands look professional and grow fast online.”</p>
+      <p>Our mission is to help businesses stand out online through clean, user-focused design and fast, scalable code. We believe great websites start with understanding your audience and goals.</p>
+    </div>
+    <div class="about-image">
+      <div class="image-container">
+        <img src="img/logo.jpg" alt="Alex Morgan" width ="300" height="300" >
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- 🛠️ 3. Services Section -->
+   <style>
+    
+   light-theme .site-footer {
+    background: #f8fafc;
+    color: #1e293b;
+  }
+
+
+  .light-theme .footer-links a,
+  .light-theme .footer-social a {
+    color: #475569;
+  }
+
+  .light-theme .footer-links a:hover,
+  .light-theme .footer-social a:hover {
+    color: #2563eb; /* Your brand blue */
+  }
+
+  .light-theme .footer-bottom {
+    border-top-color: #e2e8f0;
+    color: #64748b;
+  }
+    
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links li {
+        margin: 0 10px;
+      }
+
+      #hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+    </style>
+
+    </div><!-- Services Section --></div>
+    <section id="services">
+  <section class="services-section">
+  <h3 class="h3" style="color: #059669;">Our Services</h3>
+  <div class="services-grid">
+    
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Web Developer</h3>
+      <p>Beautiful, modern websites tailored to your brand and audience.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Graphic Design & Web Design</h3>
+      <p>Logos, branding, social media visuals, and print materials that capture your identity.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3>Digital Marketing</h3>
+      <p>Social media management, SEO, and ad campaigns to grow your audience and sales.</p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎥</div>
+      <h3>Video Editing</h3>
+      <p>Professional editing for ads, reels, YouTube, and events — engaging and on-brand.</p>
+    </div>
+    
+
+  </div>
+</section>
+   
+  <!-- 🖼️ 4. Package Section -->
+   <section id="packages">
+    <h2 class="h2" style="text-align: center;">Our packages</h2>
+   <section class="packages-section">
+  <div class="packages-grid">
+     <div class="package-card">
+      <h3>Basic</h3>
+      <ul>
+        <li>Static website</li>
+        <li>Limited pages</li>
+        <li>2 Sublinks</li>
+        <li>Not Modern</li>
+        <li>No Background decoration</li>
+        <li>Not responsive</li>
+        <li>Read only</li>
+        <li>Limited Photos &amp; Video</li>
+        <li>Anyone can buy it</li>
+        <li>Not decorated</li>
+        <li>Best option for personal use</li>
+        <li class="price">Price: <strong>3999 ETB</strong></li>
+          <!-- Choose a Plan Section -->
+          <section class="cta-section">
+            <div class="cta-container">
+          <h2>Ready to Get Started?</h2>
+         <p>Choose a plan that fits your needs and launch your online presence today.</p>
+        <b><a href="#contact" class="cta-button">Choose a Plan →</a></b>
+            </div>
+                </section>
+      </ul>
+    </div>
+
+    <div class="package-card">
+      <h3>Middle</h3>
+<ul>
+        <li>Static and Dynamic</li>
+        <li>Unlimited pages</li>
+        <li>11 Sublinks</li>
+        <li> not modern ,not backward</li>
+        <li>read only</li>
+        <li>unlimited photo</li>
+        <li>unlimited video</li>
+        <li>recomended for businesses</li>
+        <li>decotated</li>
+        <li>best for business campany</li>
+          <li class="price">Price: <strong>5999 ETB</strong></li>
+        <!-- Choose a Plan Section -->
+          <section class="cta-section">
+            <div class="cta-container">
+          <h2>Ready to Get Started?</h2>
+         <p>Choose a plan that fits your needs and launch your online presence today.</p>
+        <b><a href="#contact" class="cta-button">Choose a Plan →</a></b>
+            </div>
+                </section>
+      
+           
+      </ul>
+    </div>
+
+
+    <div class="package-card">
+      <h3>Premium</h3>
+      <ul>
+        <li>Static and Dynamic</li>
+        <li>Unlimited pages</li>
+        <li>Unlimited sublinks</li>
+        <li>100% modern website</li>
+        <li>Can be customizable</li>
+        <li>Unlimited photo</li>
+        <li>Unlimited video</li>
+        <li>For business</li>
+        <li>So decorated</li>
+        <li>Expensive but so nice</li>
+        <li>To inhance productivity</li>
+          <li class="price">Price: <strong>6999 ETB</strong></li>
+        <!-- Choose a Plan Section -->
+          <section class="cta-section">
+            <div class="cta-container">
+          <h2>Ready to Get Started?</h2>
+         <p>Choose a plan that fits your needs and launch your online presence today.</p>
+        <b><a href="#contact" class="cta-button">Choose a Plan →</a></b>
+            </div>
+                </section>
+
+    </div>
+
+
+  </div>
+</section>
+
+  
+
+  
+  <!-- 📞 Contact Section -->
+  <section id="contact">
+    <form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="0da0039d-b0d5-4eb8-a4d4-bde6b7aafdb6" />
+   
+      <input type="hidden" name="subject" value="New Submission from YAM Agency" />
+      <input type="checkbox" name="botcheck" style="display: none;" />
+      <section style="background: #000000; padding: 80px 20px; color: #ffffff; font-family: 'Segoe UI', sans-serif;">
+  <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+    <h2 class="h21">Contact Us</h2>
+    <p style="margin-bottom: 40px; color: #cbd5e1;">Have a project in mind? Get in touch!</p>
+       <div style="margin-bottom: 18px;">
+        <input type="text" name="name" placeholder="Your Name" required
+          style="width: 100%; padding: 14px; border: 1px solid #333; border-radius: 8px; background: #111; color: white; font-size: 16px;">
+      </div>
+      <div style="margin-top: 18px;" >
+        <input type="number" name="number" placeholder="phone number" required 
+      style="width: 100%; padding: 24px; border: 1px solid #333; border-radius: 8px; background: #111; color: white; font-size: 16px;">
+
+      </div>
+      <br>
+
+     <div style="margin-bottom: 18px;">
+        <input type="email" name="email" placeholder="Your Email" required
+          style="width: 100%; padding: 14px; border: 1px solid #333; border-radius: 8px; background: #111; color: white; font-size: 16px;">
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <textarea name="message" placeholder="Your Message..." required
+          style="width: 100%; padding: 14px; border: 1px solid #333; border-radius: 8px; background: #111; color: white; font-size: 16px; height: 140px; resize: vertical;"></textarea>
+      </div>
+
+      <button type="submit"
+        style="width: 100%; padding: 14px; background: #2563eb; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">
+        Send Message
+      </button>
+    </form>
+  </div>
+                  <main>
+        
+                         <div class="form-box">
+                           <a href="tel:0925591826" 
+                                         style="display: inline-block; background: #50c8ff; color: #000; padding: 0.9rem 2rem; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(80, 200, 255, 0.5); transition: all 0.3s; margin: 1rem 0;">
+                                                              📞 Call Now
+              </a>
+                          </div>
+                    </main>   
+
+  </section>
+  <!-- ⚙️ 7. Footer -->
+   <section id="footer"></section>
+  <footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <a href="#hero"><strong>Nova Reach Agency</strong></a>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-social">
+      <!-- Social Icons (PNG) -->
+  <div style="margin-bottom: 12px;">
+     <a href="mailto:novareachagency1@gmail.com" target="_blank" style="display: inline-block; margin: 0 6px;">
+      <img src="img/Gmail logo.jfif" alt="Gmail" width="28" style="filter: invert(1);">
+    </a>
+    <a href="https://t.me/Novareachagency" target="_blank" style="display: inline-block; margin: 0 6px;">
+      <img src="img/Telegram Logo PNG.jfif" alt="Telegram" width="28" style="filter: invert(1);">
+    </a>
+    <a href="https://tiktok.com/@novareachagency1" target="_blank" style="display: inline-block; margin: 0 6px;">
+      <img src="img/Download Tiktok 3d Icon.jfif" alt="TikTok" width="28" style="filter: invert(1);">
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61582063785232" target="_blank" style="display: inline-block; margin: 0 6px;">
+      <img src="img/Professional 3D Facebook Logo - Social Media Icon.jfif" alt="Facebook" width="28" style="filter: invert(1);" >
+    </a>
+    <a href="https://www.instagram.com/novareachagency2025" target="_blank" style="display: inline-block; margin: 0 6px;">
+      <img src="img/Instagram Circle Button Icon by Natanaelginting.jfif" alt="Instagram" width="28" style="filter: invert(1);">
+    </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span style="text-align: center;">2025 Nova Reach Agency. All rights reserved.</span></p>
+  </div>
+</footer>
+</body>
+</html>
